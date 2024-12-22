@@ -1,9 +1,14 @@
 流量转发
+
+使用sngrep来查看流量时序图
+
+
 ## 转发机： 
 网络类型：公网
 可以用kamailio或者opensips，也可以用下面的方式把流量转发过去，
 业务端口转发到fs上处理，包括媒体、RTC，
 root@call-proxy-003:~# iptables -t nat -L -n -v
+
 Chain PREROUTING (policy ACCEPT 374 packets, 22068 bytes)
  pkts bytes target     prot opt in     out     source               destination
     0     0 DNAT       tcp  --  *      *       0.0.0.0/0            0.0.0.0/0            tcp dpt:28443 to:12.0.0.10:28443
